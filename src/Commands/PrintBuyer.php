@@ -27,7 +27,7 @@ class PrintBuyer extends Base
 			print_r($sr->name());
 			print_r($sr->toArray());
 			print_r($sr->toJson());
-			print_r('/n');
+			print_r('\n');
 		}
 	}
 

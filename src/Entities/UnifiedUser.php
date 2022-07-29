@@ -40,7 +40,7 @@ class UnifiedUser extends AbstractEntity
 		}
 
 		if ($this->type instanceof Seller) {
-			return $this->name;
+			return $this->type->name;
 		}
 
 		die('Error name type');
@@ -48,12 +48,19 @@ class UnifiedUser extends AbstractEntity
 
 	public function getEmail() : string
 	{
-		return $this->email;
+		return $this->type->email;
 	}
 
 	public function getPhone() : string
 	{
-		return $this->phone;
+		if ($this->type instanceof Buyer) {
+			return $this->type->phone;
+		}
+
+		if ($this->type instanceof Seller) {
+			return $this->phone;
+		}
+
 	}
 
 }
