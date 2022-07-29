@@ -9,9 +9,9 @@ use App\Entities\Buyer;
 
 class PrintSeller extends Base
 {
-	public string $command = 'print:seller';
+	public static string $command = 'print:seller';
 
-	public function handle()
+	public static function handle()
 	{
 		$sellers = [
 			new Seller('a', 'a.com', 'a@gmail.com'),

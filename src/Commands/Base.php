@@ -4,9 +4,9 @@ namespace App\Commands;
 
 class Base 
 {
-	public string $command = '';
+	public static string $command = '';
 
-	public function handle()
+	public static function handle()
 	{
 
 	}
