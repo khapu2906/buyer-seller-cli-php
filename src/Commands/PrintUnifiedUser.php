@@ -10,9 +10,9 @@ use App\Entities\Buyer;
 
 class PrintUnifiedUser extends Base
 {
-	public string $command = 'print:uu';
+	public static string $command = 'print:uu';
 
-	public function handle()
+	public static function handle()
 	{
 		$ps = [
 			new Seller('a', 'a.com', 'a@gmail.com'),

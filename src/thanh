@@ -5,19 +5,16 @@ include "./index.php";
 
 $commands = require "./configs/command.php";
 
-
-$objectCommands = [];
-
+$flag = false;
 
 foreach ($commands as $c) {
-	$oc = new $c();
-	$objectCommands[$oc->command] = $oc;
+	if ($c::$command == $argv[1]) {
+		$c::handle();
+		$flag = true;
+		break;
+	}
+}
+if (!$flag) {
+	die("No command");
 }
 
-if (in_array($argv[1], array_keys($objectCommands))) {
-	$objectCommands[$argv[1]]->handle();
-}
-
-die("No command");
-
-// var_dump($commands[2]);
